@@ -1,0 +1,4 @@
+the hostname: cs5200-fall2019-shi.celgocxabywm.us-east-2.rds.amazonaws.com
+username: shichenxin
+password: 88217056
+port: 3306
