@@ -15,13 +15,13 @@ INNER JOIN `page_role` b ON a.`role` <> b.`role`
 SET a.`developer` = b.`developer`
 WHERE 
 (
-(a.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET'))) 
-AND (b.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET')))) 
+(a.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'CNET-Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET'))) 
+AND (b.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'CNET-Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET')))) 
 AND (a.`developer` = (SELECT `id` FROM `developer` WHERE (`person` = (SELECT `id` FROM `person` WHERE `usr_name` = 'bob'))))
 AND (b.`developer` = (SELECT `id` FROM `developer` WHERE (`person` = (SELECT `id` FROM `person` WHERE `usr_name` = 'charlie')))))
 OR
-(a.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET'))) 
-AND (b.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET')))) 
+(a.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'CNET-Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET'))) 
+AND (b.`page` = (SELECT `id` FROM `page` WHERE (`title` = 'CNET-Home' AND `website` = (SELECT `id` FROM `website` WHERE `name` = 'CNET')))) 
 AND (b.`developer` = (SELECT `id` FROM `developer` WHERE (`person` = (SELECT `id` FROM `person` WHERE `usr_name` = 'bob'))))
 AND (a.`developer` = (SELECT `id` FROM `developer` WHERE (`person` = (SELECT `id` FROM `person` WHERE `usr_name` = 'charlie')))))
 );
