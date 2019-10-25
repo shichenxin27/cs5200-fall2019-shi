@@ -26,6 +26,7 @@ END IF;
 END;
 &&
 
+
 DELIMITER &&
 CREATE TRIGGER website_privilege_update_trigger AFTER UPDATE ON website_role FOR EACH ROW
 BEGIN
