@@ -24,7 +24,7 @@ INSERT INTO website_privilege (privilege, website, developer)
 VALUES('read', NEW.website, NEW.developer);
 END IF;
 END;
-
+&&
 
 DELIMITER &&
 CREATE TRIGGER website_privilege_update_trigger AFTER UPDATE ON website_role FOR EACH ROW
@@ -53,13 +53,14 @@ INSERT INTO website_privilege (privilege, website, developer)
 VALUES('read', NEW.website, NEW.developer);
 END IF;
 END;
+&&
 
 DELIMITER &&
 CREATE TRIGGER website_privilege_delete_trigger AFTER DELETE ON website_role FOR EACH ROW
 BEGIN
 DELETE FROM website_privilege WHERE website = OLD.website AND developer = OLD.developer;
 END;
-
+&&
 
 
 DELIMITER &&
@@ -88,7 +89,7 @@ INSERT INTO page_privilege (privilege, page, developer)
 VALUES('read', NEW.page, NEW.developer);
 END IF;
 END;
-
+&&
 
 DELIMITER &&
 CREATE TRIGGER page_privilege_update_trigger AFTER UPDATE ON page_role FOR EACH ROW
@@ -117,9 +118,11 @@ INSERT INTO page_privilege (privilege, page, developer)
 VALUES('read', NEW.page, NEW.developer);
 END IF;
 END;
+&&
 
 DELIMITER &&
 CREATE TRIGGER page_privilege_delete_trigger AFTER DELETE ON page_role FOR EACH ROW
 BEGIN
 DELETE FROM page_privilege WHERE page = OLD.page AND developer = OLD.developer;
 END
+&&
